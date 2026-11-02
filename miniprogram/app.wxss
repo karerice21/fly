@@ -1,0 +1,93 @@
+page {
+  min-height: 100%;
+  background: #f5f7fb;
+  color: #172033;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+  font-size: 28rpx;
+}
+
+view,
+text,
+button,
+input,
+textarea,
+picker {
+  box-sizing: border-box;
+}
+
+button::after {
+  border: none;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 32rpx;
+}
+
+.page-title {
+  font-size: 48rpx;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -1rpx;
+}
+
+.page-subtitle {
+  margin-top: 10rpx;
+  color: #77839a;
+  font-size: 25rpx;
+  line-height: 1.6;
+}
+
+.card {
+  background: #ffffff;
+  border: 1rpx solid #e8ecf3;
+  border-radius: 28rpx;
+  box-shadow: 0 10rpx 32rpx rgba(35, 54, 92, 0.06);
+}
+
+.primary-button {
+  height: 96rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 26rpx;
+  background: #2457e6;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 650;
+  box-shadow: 0 14rpx 30rpx rgba(36, 87, 230, 0.22);
+}
+
+.primary-button[disabled] {
+  background: #cbd3e1;
+  color: #f8f9fb;
+  box-shadow: none;
+}
+
+.secondary-button {
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24rpx;
+  background: #eef2ff;
+  color: #2457e6;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+
+.eyebrow {
+  color: #2457e6;
+  font-size: 22rpx;
+  font-weight: 700;
+  letter-spacing: 2rpx;
+  text-transform: uppercase;
+}
+
+.muted {
+  color: #8792a6;
+}
+
+.mono {
+  font-family: "SFMono-Regular", Consolas, monospace;
+}

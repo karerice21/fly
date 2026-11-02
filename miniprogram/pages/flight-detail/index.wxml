@@ -1,0 +1,78 @@
+<view wx:if="{{flight}}" class="detail-page">
+  <view class="map-wrap">
+    <map
+      id="flight-detail-map"
+      class="detail-map"
+      latitude="{{mapCenter.latitude}}"
+      longitude="{{mapCenter.longitude}}"
+      scale="{{mapScale}}"
+      markers="{{markers}}"
+      polyline="{{polylines}}"
+      include-points="{{includePoints}}"
+      enable-zoom="true"
+      enable-scroll="true"
+    ></map>
+    <cover-view class="route-type">Great Circle · 理论航线</cover-view>
+  </view>
+
+  <view class="content">
+    <view class="ticket card">
+      <view class="ticket-date">
+        <text>{{displayDate}}</text>
+        <text wx:if="{{flight.flightNo}}" class="flight-number mono">{{flight.flightNo}}</text>
+      </view>
+      <view class="route-row">
+        <view class="endpoint">
+          <text class="code mono">{{flight.departure.iata || flight.departure.icao}}</text>
+          <text class="city">{{flight.departure.cityZh || flight.departure.city}}</text>
+        </view>
+        <view class="air-line">
+          <view class="dot"></view><view class="dash"></view><text class="plane">✈</text><view class="dash"></view><view class="dot"></view>
+        </view>
+        <view class="endpoint right">
+          <text class="code mono">{{flight.arrival.iata || flight.arrival.icao}}</text>
+          <text class="city">{{flight.arrival.cityZh || flight.arrival.city}}</text>
+        </view>
+      </view>
+      <view class="distance"><text class="distance-number">{{displayDistance}}</text> km</view>
+    </view>
+
+    <view class="card info-card">
+      <view class="info-row">
+        <text class="label">出发机场</text>
+        <view class="value">
+          <text>{{flight.departure.nameZh || flight.departure.name}}</text>
+          <text class="subvalue">{{flight.departure.name}}</text>
+        </view>
+      </view>
+      <view class="info-row">
+        <text class="label">到达机场</text>
+        <view class="value">
+          <text>{{flight.arrival.nameZh || flight.arrival.name}}</text>
+          <text class="subvalue">{{flight.arrival.name}}</text>
+        </view>
+      </view>
+      <view wx:if="{{flight.aircraft}}" class="info-row"><text class="label">机型</text><text class="value">{{flight.aircraft}}</text></view>
+      <view wx:if="{{flight.seat}}" class="info-row"><text class="label">座位</text><text class="value mono">{{flight.seat}}</text></view>
+      <view wx:if="{{flight.note}}" class="note-row">
+        <text class="label">备注</text>
+        <text class="note">{{flight.note}}</text>
+      </view>
+    </view>
+
+    <view class="disclaimer card">
+      <text class="info-mark">i</text>
+      <view>
+        <view class="disclaimer-title">关于这条航线</view>
+        <view class="disclaimer-copy">由两端机场坐标计算得到的理论大圆路径；箭头仅表示出发 → 到达方向，不代表实时位置、进度或实际 ADS-B 飞行轨迹。</view>
+      </view>
+    </view>
+
+    <view class="actions">
+      <button class="secondary-button" bindtap="editFlight">编辑</button>
+      <button class="delete-button" bindtap="deleteFlight">删除记录</button>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{loading}}" class="loading">正在加载飞行详情…</view>

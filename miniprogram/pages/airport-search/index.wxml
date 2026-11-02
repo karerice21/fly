@@ -1,0 +1,41 @@
+<view class="search-page">
+  <view class="search-bar-wrap">
+    <view class="search-bar">
+      <text class="search-icon">⌕</text>
+      <input
+        class="search-input"
+        value="{{query}}"
+        focus="true"
+        confirm-type="search"
+        placeholder="如 PEK、北京、Haneda"
+        maxlength="64"
+        bindinput="onInput"
+      />
+      <text wx:if="{{query}}" class="clear" bindtap="clearQuery">×</text>
+    </view>
+    <view class="search-tip">支持机场三字码、四字码、城市与中英文机场名</view>
+  </view>
+
+  <view class="result-header">
+    <text>{{hint}}</text>
+    <text wx:if="{{airports.length}}" class="result-count">{{airports.length}} 个结果</text>
+  </view>
+
+  <view class="result-list">
+    <view wx:for="{{airports}}" wx:key="_id" class="airport-row" data-id="{{item._id}}" bindtap="selectAirport">
+      <view class="iata mono">{{item.iata || item.icao}}</view>
+      <view class="airport-info">
+        <view class="airport-name">{{item.nameZh || item.name}}</view>
+        <view class="airport-meta">{{item.cityZh || item.city}} · {{item.countryName}} · {{item.icao}}</view>
+      </view>
+      <text class="chevron">›</text>
+    </view>
+  </view>
+
+  <view wx:if="{{loading}}" class="status">正在搜索机场…</view>
+  <view wx:elif="{{!loading && airports.length === 0}}" class="status empty-status">
+    <view class="empty-mark">⌕</view>
+    <view>没有找到匹配的机场</view>
+    <view class="empty-help">试试机场代码、城市或英文名称</view>
+  </view>
+</view>

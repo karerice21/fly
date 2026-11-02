@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.png binary
+*.docx binary
+*.zip binary
+miniprogram/data/airports.js linguist-generated=true
+cloud-data/airports.json linguist-generated=true

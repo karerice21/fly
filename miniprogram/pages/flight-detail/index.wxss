@@ -1,0 +1,235 @@
+.detail-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+}
+
+.map-wrap {
+  position: relative;
+  height: 560rpx;
+}
+
+.detail-map {
+  width: 100%;
+  height: 100%;
+}
+
+.route-type {
+  position: absolute;
+  top: 24rpx;
+  left: 24rpx;
+  padding: 12rpx 20rpx;
+  border-radius: 999rpx;
+  background: rgba(23, 32, 51, 0.82);
+  color: white;
+  font-size: 20rpx;
+}
+
+.content {
+  position: relative;
+  margin-top: -58rpx;
+  padding: 0 28rpx 48rpx;
+}
+
+.ticket {
+  position: relative;
+  z-index: 1;
+  padding: 30rpx;
+}
+
+.ticket-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #7b879b;
+  font-size: 23rpx;
+}
+
+.flight-number {
+  padding: 8rpx 14rpx;
+  border-radius: 10rpx;
+  background: #eef2fa;
+  color: #4f5d74;
+  font-size: 21rpx;
+}
+
+.route-row {
+  margin-top: 32rpx;
+  display: flex;
+  align-items: center;
+}
+
+.endpoint {
+  width: 142rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.endpoint.right {
+  align-items: flex-end;
+}
+
+.code {
+  color: #172033;
+  font-size: 52rpx;
+  font-weight: 760;
+  line-height: 1;
+  letter-spacing: 2rpx;
+}
+
+.city {
+  margin-top: 11rpx;
+  color: #7d899b;
+  font-size: 22rpx;
+}
+
+.air-line {
+  flex: 1;
+  margin: 0 10rpx;
+  display: flex;
+  align-items: center;
+  gap: 7rpx;
+  color: #2457e6;
+}
+
+.dot {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background: #9daccc;
+}
+
+.dash {
+  flex: 1;
+  border-top: 1rpx dashed #aebbd5;
+}
+
+.plane {
+  font-size: 28rpx;
+}
+
+.distance {
+  margin-top: 28rpx;
+  padding-top: 24rpx;
+  border-top: 1rpx solid #edf0f5;
+  color: #778398;
+  text-align: center;
+  font-size: 22rpx;
+}
+
+.distance-number {
+  color: #27334a;
+  font-size: 32rpx;
+  font-weight: 720;
+}
+
+.info-card {
+  margin-top: 22rpx;
+  padding: 8rpx 30rpx;
+}
+
+.info-row {
+  min-height: 104rpx;
+  padding: 22rpx 0;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1rpx solid #edf0f5;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.label {
+  flex: 0 0 142rpx;
+  color: #8691a4;
+  font-size: 23rpx;
+}
+
+.value {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: #2a354c;
+  font-size: 24rpx;
+  line-height: 1.45;
+  text-align: right;
+}
+
+.subvalue {
+  margin-top: 6rpx;
+  color: #9aa3b2;
+  font-size: 19rpx;
+}
+
+.note-row {
+  padding: 24rpx 0;
+}
+
+.note {
+  display: block;
+  margin-top: 14rpx;
+  color: #465268;
+  font-size: 24rpx;
+  line-height: 1.65;
+}
+
+.disclaimer {
+  margin-top: 22rpx;
+  padding: 26rpx;
+  display: flex;
+  gap: 18rpx;
+  background: #f0f4ff;
+  border-color: #dce5ff;
+  box-shadow: none;
+}
+
+.info-mark {
+  flex: 0 0 auto;
+  width: 36rpx;
+  height: 36rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #2457e6;
+  color: white;
+  font-size: 20rpx;
+}
+
+.disclaimer-title {
+  color: #304470;
+  font-size: 23rpx;
+  font-weight: 680;
+}
+
+.disclaimer-copy {
+  margin-top: 8rpx;
+  color: #66769a;
+  font-size: 21rpx;
+  line-height: 1.55;
+}
+
+.actions {
+  margin-top: 28rpx;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20rpx;
+}
+
+.delete-button {
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24rpx;
+  background: #fff0f2;
+  color: #d94b60;
+  font-size: 27rpx;
+  font-weight: 600;
+}
+
+.loading {
+  padding-top: 240rpx;
+  color: #8e99ab;
+  text-align: center;
+}

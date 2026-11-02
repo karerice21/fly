@@ -1,0 +1,24 @@
+{
+  "name": "flight-log-miniprogram",
+  "version": "1.0.0",
+  "private": true,
+  "description": "微信原生小程序：个人飞行记录、全球机场搜索与大圆航线可视化",
+  "scripts": {
+    "test": "node scripts/test.js",
+    "check": "node scripts/check-public.js",
+    "verify": "npm run check && npm test",
+    "preview:routes": "node scripts/render-routes.js",
+    "sync:airports": "node scripts/sync-airports.js"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "wechat-miniprogram",
+    "flight-log",
+    "great-circle",
+    "cloudbase",
+    "javascript"
+  ]
+}

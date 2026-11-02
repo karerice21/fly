@@ -1,0 +1,182 @@
+.edit-page {
+  padding-bottom: 54rpx;
+}
+
+.route-card,
+.form-card {
+  padding: 30rpx;
+}
+
+.form-card {
+  margin-top: 24rpx;
+}
+
+.section-label {
+  margin-bottom: 24rpx;
+  color: #172033;
+  font-size: 27rpx;
+  font-weight: 700;
+}
+
+.airport-select-row {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.airport-select {
+  flex: 1;
+  min-width: 0;
+  height: 156rpx;
+  padding: 22rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1rpx solid #e2e7f0;
+  border-radius: 22rpx;
+  background: #f9fafc;
+}
+
+.airport-select.right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.role {
+  color: #8b95a7;
+  font-size: 21rpx;
+}
+
+.selected-code {
+  margin-top: 8rpx;
+  color: #18233a;
+  font-size: 42rpx;
+  font-weight: 750;
+  line-height: 1;
+}
+
+.selected-city {
+  max-width: 200rpx;
+  margin-top: 9rpx;
+  overflow: hidden;
+  color: #7b879b;
+  font-size: 21rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeholder {
+  margin-top: 12rpx;
+  color: #2457e6;
+  font-size: 28rpx;
+  font-weight: 650;
+}
+
+.swap {
+  flex: 0 0 auto;
+  width: 64rpx;
+  height: 64rpx;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #edf2ff;
+  color: #2457e6;
+  font-size: 30rpx;
+}
+
+.preview-wrap {
+  position: relative;
+  margin-top: 24rpx;
+  overflow: hidden;
+  height: 320rpx;
+  border-radius: 22rpx;
+}
+
+.preview-map {
+  width: 100%;
+  height: 100%;
+}
+
+.distance-pill {
+  position: absolute;
+  right: 16rpx;
+  bottom: 16rpx;
+  padding: 10rpx 18rpx;
+  border-radius: 999rpx;
+  background: rgba(23, 32, 51, 0.82);
+  color: white;
+  font-size: 21rpx;
+}
+
+.field-row {
+  min-height: 102rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #edf0f5;
+}
+
+.field-label {
+  flex: 0 0 170rpx;
+  color: #39445a;
+  font-size: 25rpx;
+  font-weight: 550;
+}
+
+.required {
+  color: #ef596f;
+}
+
+.field-control {
+  flex: 1;
+  text-align: right;
+}
+
+.input {
+  height: 100rpx;
+  color: #172033;
+  font-size: 25rpx;
+}
+
+.picker-value {
+  color: #253149;
+  font-size: 25rpx;
+}
+
+.note-field {
+  position: relative;
+  padding-top: 28rpx;
+}
+
+.note-input {
+  width: 100%;
+  height: 190rpx;
+  margin-top: 18rpx;
+  padding: 22rpx;
+  border-radius: 18rpx;
+  background: #f7f9fc;
+  color: #27334b;
+  font-size: 25rpx;
+  line-height: 1.55;
+}
+
+.counter {
+  position: absolute;
+  right: 16rpx;
+  bottom: 14rpx;
+  color: #a0a8b6;
+  font-size: 19rpx;
+}
+
+.route-disclaimer {
+  margin: 24rpx 12rpx;
+  color: #8792a5;
+  font-size: 21rpx;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.save-button {
+  margin-top: 14rpx;
+}

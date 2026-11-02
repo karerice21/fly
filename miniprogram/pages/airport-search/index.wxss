@@ -1,0 +1,145 @@
+.search-page {
+  min-height: 100vh;
+  background: #f7f9fc;
+}
+
+.search-bar-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 26rpx 28rpx 20rpx;
+  background: rgba(247, 249, 252, 0.96);
+}
+
+.search-bar {
+  height: 90rpx;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  border: 2rpx solid #2457e6;
+  border-radius: 24rpx;
+  background: #ffffff;
+  box-shadow: 0 10rpx 26rpx rgba(36, 87, 230, 0.1);
+}
+
+.search-icon {
+  color: #2457e6;
+  font-size: 36rpx;
+}
+
+.search-input {
+  flex: 1;
+  height: 88rpx;
+  color: #172033;
+  font-size: 28rpx;
+}
+
+.clear {
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #d8deea;
+  color: white;
+  font-size: 28rpx;
+}
+
+.search-tip {
+  margin-top: 14rpx;
+  color: #8b95a8;
+  font-size: 21rpx;
+}
+
+.result-header {
+  padding: 20rpx 34rpx 14rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #566279;
+  font-size: 23rpx;
+  font-weight: 650;
+}
+
+.result-count {
+  color: #9aa3b2;
+  font-weight: 400;
+}
+
+.result-list {
+  margin: 0 28rpx 30rpx;
+  overflow: hidden;
+  border: 1rpx solid #e8ecf3;
+  border-radius: 26rpx;
+  background: white;
+}
+
+.airport-row {
+  min-height: 134rpx;
+  padding: 24rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #edf0f5;
+}
+
+.airport-row:last-child {
+  border-bottom: none;
+}
+
+.iata {
+  flex: 0 0 112rpx;
+  color: #2457e6;
+  font-size: 34rpx;
+  font-weight: 750;
+  letter-spacing: 1rpx;
+}
+
+.airport-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.airport-name {
+  overflow: hidden;
+  color: #263147;
+  font-size: 26rpx;
+  font-weight: 620;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.airport-meta {
+  margin-top: 10rpx;
+  overflow: hidden;
+  color: #8993a6;
+  font-size: 21rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  margin-left: 16rpx;
+  color: #aab2c0;
+  font-size: 38rpx;
+}
+
+.status {
+  padding: 100rpx 30rpx;
+  color: #909bad;
+  font-size: 25rpx;
+  text-align: center;
+}
+
+.empty-mark {
+  margin-bottom: 18rpx;
+  font-size: 52rpx;
+  color: #9eabba;
+}
+
+.empty-help {
+  margin-top: 12rpx;
+  color: #a6aebb;
+  font-size: 22rpx;
+}

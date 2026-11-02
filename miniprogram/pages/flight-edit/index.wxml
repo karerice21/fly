@@ -1,0 +1,72 @@
+<view class="page edit-page">
+  <view class="route-card card">
+    <view class="section-label">航线</view>
+    <view class="airport-select-row">
+      <view class="airport-select" data-role="departure" bindtap="chooseAirport">
+        <text class="role">出发</text>
+        <block wx:if="{{form.departure}}">
+          <text class="selected-code mono">{{form.departure.iata || form.departure.icao}}</text>
+          <text class="selected-city">{{form.departure.cityZh || form.departure.city}}</text>
+        </block>
+        <text wx:else class="placeholder">选择机场</text>
+      </view>
+      <button class="swap" bindtap="swapAirports">⇄</button>
+      <view class="airport-select right" data-role="arrival" bindtap="chooseAirport">
+        <text class="role">到达</text>
+        <block wx:if="{{form.arrival}}">
+          <text class="selected-code mono">{{form.arrival.iata || form.arrival.icao}}</text>
+          <text class="selected-city">{{form.arrival.cityZh || form.arrival.city}}</text>
+        </block>
+        <text wx:else class="placeholder">选择机场</text>
+      </view>
+    </view>
+
+    <view wx:if="{{form.departure && form.arrival}}" class="preview-wrap">
+      <map
+        id="route-preview-map"
+        class="preview-map"
+        latitude="{{mapCenter.latitude}}"
+        longitude="{{mapCenter.longitude}}"
+        scale="{{mapScale}}"
+        markers="{{markers}}"
+        polyline="{{polylines}}"
+        include-points="{{includePoints}}"
+        enable-zoom="true"
+        enable-scroll="true"
+      ></map>
+      <cover-view class="distance-pill">约 {{distanceKm}} km</cover-view>
+    </view>
+  </view>
+
+  <view class="form-card card">
+    <view class="section-label">飞行信息</view>
+    <view class="field-row">
+      <text class="field-label">飞行日期 <text class="required">*</text></text>
+      <picker class="field-control" mode="date" value="{{form.flightDate}}" bindchange="onDateChange">
+        <view class="picker-value">{{form.flightDate}} <text>›</text></view>
+      </picker>
+    </view>
+    <view class="field-row">
+      <text class="field-label">航班号</text>
+      <input class="field-control input" value="{{form.flightNo}}" placeholder="如 NH962" maxlength="12" data-field="flightNo" bindinput="onFieldInput" />
+    </view>
+    <view class="field-row">
+      <text class="field-label">机型</text>
+      <input class="field-control input" value="{{form.aircraft}}" placeholder="如 B787-9" maxlength="32" data-field="aircraft" bindinput="onFieldInput" />
+    </view>
+    <view class="field-row">
+      <text class="field-label">座位</text>
+      <input class="field-control input" value="{{form.seat}}" placeholder="如 32A" maxlength="12" data-field="seat" bindinput="onFieldInput" />
+    </view>
+    <view class="note-field">
+      <text class="field-label">备注</text>
+      <textarea class="note-input" value="{{form.note}}" placeholder="写下这段旅程的片段…" maxlength="500" data-field="note" bindinput="onFieldInput"></textarea>
+      <text class="counter">{{form.note.length}} / 500</text>
+    </view>
+  </view>
+
+  <view class="route-disclaimer">箭头仅表示出发 → 到达方向，不是飞机实时位置；理论航线会在打开时重新生成。</view>
+  <button class="primary-button save-button" disabled="{{!valid || loading}}" loading="{{loading}}" bindtap="save">
+    {{isEditing ? '保存修改' : '保存飞行记录'}}
+  </button>
+</view>

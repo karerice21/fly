@@ -1,0 +1,107 @@
+<view class="profile-page">
+  <view class="profile-hero">
+    <view class="eyebrow">FLIGHT SUMMARY</view>
+    <view class="page-title">我的飞行</view>
+    <view class="page-subtitle">你走过的天空，会在这里慢慢连成一张图。</view>
+  </view>
+
+  <view class="stats-grid">
+    <view class="stat-card primary-stat">
+      <text class="stat-value">{{stats.flights}}</text>
+      <text class="stat-name">飞行次数</text>
+      <text class="stat-icon">✈</text>
+    </view>
+    <view class="stat-card">
+      <text class="stat-value small-value">{{displayDistance}}</text>
+      <text class="stat-name">累计公里</text>
+      <text class="stat-symbol">km</text>
+    </view>
+    <view
+      class="stat-card tappable-stat"
+      data-type="airports"
+      role="button"
+      aria-label="查看到访机场"
+      hover-class="stat-card-hover"
+      bindtap="openTravelSummary"
+    >
+      <text class="stat-value">{{stats.airports}}</text>
+      <text class="stat-name">到访机场</text>
+      <text class="stat-symbol">AIRPORTS</text>
+      <text class="stat-chevron">›</text>
+    </view>
+    <view
+      class="stat-card tappable-stat"
+      data-type="regions"
+      role="button"
+      aria-label="查看国家和地区"
+      hover-class="stat-card-hover"
+      bindtap="openTravelSummary"
+    >
+      <text class="stat-value">{{stats.countries}}</text>
+      <text class="stat-name">国家 / 地区</text>
+      <text class="stat-symbol">REGIONS</text>
+      <text class="stat-chevron">›</text>
+    </view>
+  </view>
+
+  <view class="menu-card card">
+    <view class="menu-title">说明与设置</view>
+    <view wx:if="{{canLoadDemo && !loading && !stats.flights}}" class="menu-row" bindtap="loadDemo">
+      <view class="menu-icon blue">✈</view>
+      <view class="menu-copy">
+        <text class="menu-label">{{loadingDemo ? '正在添加示例…' : '体验示例旅程'}}</text>
+        <text class="menu-desc">8 条虚构记录，快速体验地图与统计</text>
+      </view>
+      <text class="chevron">›</text>
+    </view>
+    <view class="menu-row" bindtap="showAboutRoute">
+      <view class="menu-icon blue">⌁</view>
+      <view class="menu-copy">
+        <text class="menu-label">关于航线</text>
+        <text class="menu-desc">理论大圆航线与真实轨迹的区别</text>
+      </view>
+      <text class="chevron">›</text>
+    </view>
+    <view class="menu-row" bindtap="showPrivacy">
+      <view class="menu-icon green">⌾</view>
+      <view class="menu-copy">
+        <text class="menu-label">数据与隐私</text>
+        <text class="menu-desc">了解数据保存方式和使用范围</text>
+      </view>
+      <text class="chevron">›</text>
+    </view>
+    <view class="menu-row danger-row" bindtap="removeAll">
+      <view class="menu-icon red">×</view>
+      <view class="menu-copy">
+        <text class="menu-label danger">删除全部数据</text>
+        <text class="menu-desc">永久清空个人飞行记录</text>
+      </view>
+      <text class="chevron">›</text>
+    </view>
+  </view>
+
+  <view class="version">飞行日志 MVP · 路线版本 great_circle / 1</view>
+
+  <view wx:if="{{summaryPanel.visible}}" class="summary-mask" bindtap="closeTravelSummary">
+    <view class="summary-sheet" catchtap="keepTravelSummaryOpen">
+      <view class="summary-handle"></view>
+      <view class="summary-header">
+        <view>
+          <view class="summary-title">{{summaryPanel.title}}</view>
+          <view class="summary-count">共 {{summaryPanel.items.length}} 项</view>
+        </view>
+        <view class="summary-close" role="button" aria-label="关闭" bindtap="closeTravelSummary">×</view>
+      </view>
+      <scroll-view class="summary-list" scroll-y="true">
+        <view wx:for="{{summaryPanel.items}}" wx:key="key" class="summary-row">
+          <view wx:if="{{summaryPanel.type === 'airports'}}" class="summary-code mono">{{item.code}}</view>
+          <view class="summary-copy">
+            <text class="summary-name">{{item.title}}</text>
+            <text wx:if="{{item.subtitle}}" class="summary-subtitle">{{item.subtitle}}</text>
+          </view>
+          <text wx:if="{{summaryPanel.type === 'regions' && item.code}}" class="region-code mono">{{item.code}}</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

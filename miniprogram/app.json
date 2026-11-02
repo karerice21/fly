@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/map/index",
+    "pages/flights/index",
+    "pages/profile/index",
+    "pages/flight-edit/index",
+    "pages/airport-search/index",
+    "pages/flight-detail/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "飞行日志",
+    "navigationBarBackgroundColor": "#F7F9FC",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#F7F9FC",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#8390A5",
+    "selectedColor": "#2457E6",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/map/index",
+        "text": "地图"
+      },
+      {
+        "pagePath": "pages/flights/index",
+        "text": "记录"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "lazyCodeLoading": "requiredComponents"
+}

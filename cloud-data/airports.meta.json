@@ -1,0 +1,13 @@
+{
+  "source": "OurAirports",
+  "sourceUrls": {
+    "airports": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+    "countries": "https://davidmegginson.github.io/ourairports-data/countries.csv"
+  },
+  "license": "Public Domain",
+  "generatedAt": "2026-08-24T06:42:13.511Z",
+  "sourceAirportRows": 85944,
+  "importedAirports": 9027,
+  "filter": "large/medium/small/seaplane; valid coordinates; scheduled_service=yes or IATA present; IATA or ICAO present; excludes closed airports, heliports and balloonports",
+  "notes": "English names come from OurAirports. A small curated Chinese alias overlay preserves the project’s existing airport names; no bulk machine translation is used. Unique IATA codes remain document IDs for backward compatibility; duplicates fall back to ICAO or oa_<source id>."
+}

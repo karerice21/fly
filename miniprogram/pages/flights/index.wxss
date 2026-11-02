@@ -1,0 +1,178 @@
+.flights-page {
+  padding-bottom: 150rpx;
+}
+
+.list-header {
+  padding: 12rpx 2rpx 34rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.year-filter {
+  min-width: 138rpx;
+  height: 66rpx;
+  padding: 0 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rpx;
+  border-radius: 999rpx;
+  background: #ffffff;
+  border: 1rpx solid #e2e7f0;
+  color: #46526a;
+  font-size: 24rpx;
+  font-weight: 600;
+}
+
+.flight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22rpx;
+}
+
+.flight-card {
+  padding: 30rpx;
+}
+
+.flight-meta,
+.distance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #7f8a9f;
+  font-size: 23rpx;
+}
+
+.flight-no {
+  padding: 8rpx 14rpx;
+  border-radius: 10rpx;
+  background: #eff3fb;
+  color: #55627a;
+  font-size: 21rpx;
+}
+
+.route-row {
+  margin: 28rpx 0;
+  display: flex;
+  align-items: center;
+}
+
+.airport-code {
+  width: 142rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.airport-code.right {
+  align-items: flex-end;
+}
+
+.code {
+  color: #172033;
+  font-size: 48rpx;
+  line-height: 1;
+  font-weight: 750;
+  letter-spacing: 2rpx;
+}
+
+.city {
+  margin-top: 10rpx;
+  color: #7d899d;
+  font-size: 22rpx;
+}
+
+.route-line {
+  flex: 1;
+  margin: 0 12rpx;
+  display: flex;
+  align-items: center;
+  gap: 8rpx;
+  color: #2457e6;
+}
+
+.line {
+  flex: 1;
+  height: 1rpx;
+  background: #cbd5eb;
+}
+
+.plane {
+  transform: rotate(2deg);
+  font-size: 28rpx;
+}
+
+.distance-row {
+  padding-top: 22rpx;
+  border-top: 1rpx solid #edf0f5;
+}
+
+.detail-link {
+  color: #2457e6;
+  font-weight: 600;
+}
+
+.empty {
+  margin-top: 30rpx;
+  padding: 70rpx 48rpx 50rpx;
+  text-align: center;
+}
+
+.empty-visual {
+  width: 110rpx;
+  height: 110rpx;
+  margin: 0 auto 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 36rpx;
+  background: #e8eeff;
+  color: #2457e6;
+  font-size: 50rpx;
+}
+
+.empty-title {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.empty-copy {
+  margin: 16rpx 0 4rpx;
+  color: #7e899c;
+  font-size: 24rpx;
+  line-height: 1.6;
+}
+
+.loading {
+  padding: 120rpx 0;
+  color: #929caf;
+  text-align: center;
+}
+
+.fab {
+  position: fixed;
+  right: 34rpx;
+  bottom: calc(34rpx + env(safe-area-inset-bottom));
+  width: 104rpx;
+  height: 104rpx;
+  min-width: 104rpx;
+  min-height: 104rpx;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999rpx;
+  background: #2457e6;
+  color: #ffffff;
+  font-size: 52rpx;
+  font-weight: 300;
+  line-height: 1;
+  box-shadow: 0 16rpx 32rpx rgba(36, 87, 230, 0.28);
+  z-index: 30;
+}
+
+.fab-hover {
+  transform: scale(0.94);
+  background: #1d49c6;
+}

@@ -1,0 +1,25 @@
+# Local developer settings and credentials
+project.private.config.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependencies, build output and local logs
+node_modules/
+dist/
+coverage/
+*.log
+npm-debug.log*
+
+# OS/editor metadata
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Original working document; the public product brief is docs/PRODUCT.md
+微信小程序飞行日志_PRD_v1.0.docx

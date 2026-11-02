@@ -1,0 +1,56 @@
+<view class="page flights-page">
+  <view class="list-header">
+    <view>
+      <view class="eyebrow">JOURNAL</view>
+      <view class="page-title">飞行记录</view>
+      <view class="page-subtitle">每一次起飞，都值得被记住。</view>
+    </view>
+    <picker mode="selector" range="{{yearOptions}}" value="{{yearIndex}}" bindchange="onYearChange">
+      <view class="year-filter">{{selectedYear}} <text>⌄</text></view>
+    </picker>
+  </view>
+
+  <view wx:if="{{flights.length > 0}}" class="flight-list">
+    <view wx:for="{{flights}}" wx:key="_id" class="flight-card card" data-id="{{item._id}}" bindtap="openFlight">
+      <view class="flight-meta">
+        <text>{{item.displayDate}}</text>
+        <text wx:if="{{item.flightNo}}" class="flight-no mono">{{item.flightNo}}</text>
+      </view>
+      <view class="route-row">
+        <view class="airport-code">
+          <text class="code mono">{{item.departure.iata || item.departure.icao}}</text>
+          <text class="city">{{item.departure.cityZh || item.departure.city}}</text>
+        </view>
+        <view class="route-line">
+          <view class="line"></view>
+          <text class="plane">✈</text>
+          <view class="line"></view>
+        </view>
+        <view class="airport-code right">
+          <text class="code mono">{{item.arrival.iata || item.arrival.icao}}</text>
+          <text class="city">{{item.arrival.cityZh || item.arrival.city}}</text>
+        </view>
+      </view>
+      <view class="distance-row">
+        <text>{{item.displayDistance}} km</text>
+        <text class="detail-link">查看详情 ›</text>
+      </view>
+    </view>
+  </view>
+
+  <view wx:elif="{{!loading}}" class="empty card">
+    <view class="empty-visual">✈</view>
+    <view class="empty-title">飞行记录还是空的</view>
+    <view class="empty-copy">选择出发机场、到达机场和日期，就能保存第一条记录。</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">正在读取飞行记录…</view>
+
+  <view
+    class="fab"
+    hover-class="fab-hover"
+    role="button"
+    aria-label="添加飞行记录"
+    bindtap="addFlight"
+  >＋</view>
+</view>
